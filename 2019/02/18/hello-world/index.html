@@ -182,6 +182,14 @@ var _hmt = _hmt || [];
 
           <!-- 显示阅读和评论数 -->
 
+  <br>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            本文阅读量: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+  
         
         <a href="/2019/02/18/hello-world/" class="archive-article-date">
   	<time datetime="2019-02-18T11:18:01.625Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-18</time>
@@ -328,6 +336,22 @@ var _hmt = _hmt || [];
 
   
 
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/02/18/hello-world/",
+  owner: 'Perry961002',
+  repo: 'perry961002.github.io',
+  oauth: {
+    client_id: 'af2d0d7536d507a8ab2a',
+    client_secret: 'a1e81e7426bac2279566b3732ca044db5bced2b7',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
