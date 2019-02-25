@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 博客 | Perry的博客</title>
+  <title>SICP的小练习--Scheme语言实现3个经典的排序算法 | Perry的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Things do get improved as time goes by.">
-<meta name="keywords" content="C++ Algoritm">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Perry的博客">
-<meta property="og:url" content="http://yoursite.com/tags/博客/index.html">
+  <meta name="description" content="一、说明 从去年11月份开始了《计算机程序的构造和解释》这本书的学习，开始接触了函数式。学习过程中也对编程有了新的理解，对递归这一程序设计技术也有了更深的掌握。其间为了自娱自乐用Scheme这一小众的函数式语言实现了3个经典排序算法，分别是快速排序、归并排序、堆排序。   目前我已经学习并完成了那本书的前三章的内容和习题，所有的代码也放在了GitHub仓库里，如果有对那本书感兴趣的朋友，可以一起讨">
+<meta name="keywords" content="Scheme,函数式,SICP,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SICP的小练习--Scheme语言实现3个经典的排序算法">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/scheme-sort/index.html">
 <meta property="og:site_name" content="Perry的博客">
-<meta property="og:description" content="Things do get improved as time goes by.">
+<meta property="og:description" content="一、说明 从去年11月份开始了《计算机程序的构造和解释》这本书的学习，开始接触了函数式。学习过程中也对编程有了新的理解，对递归这一程序设计技术也有了更深的掌握。其间为了自娱自乐用Scheme这一小众的函数式语言实现了3个经典排序算法，分别是快速排序、归并排序、堆排序。   目前我已经学习并完成了那本书的前三章的内容和习题，所有的代码也放在了GitHub仓库里，如果有对那本书感兴趣的朋友，可以一起讨">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/imgs/sicp/quicksort.png">
+<meta property="og:image" content="http://yoursite.com/imgs/sicp/mergesort.png">
+<meta property="og:image" content="http://yoursite.com/imgs/sicp/heapa.png">
+<meta property="og:image" content="http://yoursite.com/imgs/sicp/heapb.png">
+<meta property="og:image" content="http://yoursite.com/imgs/sicp/heapc.png">
+<meta property="og:updated_time" content="2019-02-25T08:47:28.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Perry的博客">
-<meta name="twitter:description" content="Things do get improved as time goes by.">
+<meta name="twitter:title" content="SICP的小练习--Scheme语言实现3个经典的排序算法">
+<meta name="twitter:description" content="一、说明 从去年11月份开始了《计算机程序的构造和解释》这本书的学习，开始接触了函数式。学习过程中也对编程有了新的理解，对递归这一程序设计技术也有了更深的掌握。其间为了自娱自乐用Scheme这一小众的函数式语言实现了3个经典排序算法，分别是快速排序、归并排序、堆排序。   目前我已经学习并完成了那本书的前三章的内容和习题，所有的代码也放在了GitHub仓库里，如果有对那本书感兴趣的朋友，可以一起讨">
+<meta name="twitter:image" content="http://yoursite.com/imgs/sicp/quicksort.png">
   
     <link rel="alternative" href="/atom.xml" title="Perry的博客" type="application/atom+xml">
   
@@ -168,72 +175,324 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-scheme-sort" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/21/hexo-yilia/" class="archive-article-date">
-  	<time datetime="2019-02-21T13:21:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/21/hexo-yilia/">利用Github和Hexo搭建Yilia主题的博客</a>
+    <h1 class="article-title" itemprop="name">
+      SICP的小练习--Scheme语言实现3个经典的排序算法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+          <!-- 显示阅读和评论数 -->
+
+  <br>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            本文阅读量: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+  
+        
+        <a href="/2019/02/25/scheme-sort/" class="archive-article-date">
+  	<time datetime="2019-02-25T08:09:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
+</a>
+        
+      </header>
+    
+    
+    <!-- 目录内容 -->
+
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、说明"><span class="toc-number">1.</span> <span class="toc-text">一、说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、具体算法实现"><span class="toc-number">2.</span> <span class="toc-text">二、具体算法实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-快速排序"><span class="toc-number">2.1.</span> <span class="toc-text">1.快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-算法核心思想"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1.算法核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-完整代码实现"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2.完整代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-归并排序"><span class="toc-number">2.2.</span> <span class="toc-text">2.归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-算法核心思想"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1.算法核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-完整代码实现"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.完整代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-推排序"><span class="toc-number">2.3.</span> <span class="toc-text">3.推排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-算法核心思想"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1.算法核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-完整代码实现"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2.完整代码实现</span></a></li></ol></li></ol></li></ol>
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h2><blockquote>
+<p>从去年11月份开始了《计算机程序的构造和解释》这本书的学习，开始接触了函数式。学习过程中也对编程有了新的理解，对递归这一程序设计技术也有了更深的掌握。其间为了自娱自乐用Scheme这一小众的函数式语言实现了3个经典排序算法，分别是快速排序、归并排序、堆排序。</p>
+</blockquote>
+<ul>
+<li>目前我已经学习并完成了那本书的前三章的内容和习题，所有的代码也放在了<a href="https://github.com/Perry961002/SICP" target="_blank" rel="noopener">GitHub仓库</a>里，如果有对那本书感兴趣的朋友，可以一起讨论学习。</li>
+</ul>
+<hr>
+<a id="more"></a>
+<hr>
+<h2 id="二、具体算法实现"><a href="#二、具体算法实现" class="headerlink" title="二、具体算法实现"></a>二、具体算法实现</h2><h3 id="1-快速排序"><a href="#1-快速排序" class="headerlink" title="1.快速排序"></a>1.快速排序</h3><h4 id="1-1-算法核心思想"><a href="#1-1-算法核心思想" class="headerlink" title="1.1.算法核心思想"></a>1.1.算法核心思想</h4><ul>
+<li>每次选取第一个元素作为基准，并采用过滤器<code>filter</code>将剩余元素中小于等于基准的作为<code>small</code>部分、剩余元素中大于基准的作为<code>big</code>部分，然后对<code>small</code>和<code>big</code>部分进行快速排序，最后按<code>small-基准-big</code>的顺序组合成新的列表，直到列表中只有一个元素为止.</li>
+</ul>
+<p><img src="/imgs/sicp/quicksort.png" alt></p>
+<h4 id="1-2-完整代码实现"><a href="#1-2-完整代码实现" class="headerlink" title="1.2.完整代码实现"></a>1.2.完整代码实现</h4><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">quicksort</span> L)</span><br><span class="line">    (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">null?</span></span> L)</span><br><span class="line">        '()</span><br><span class="line">        (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">small</span> (<span class="name">quicksort</span> (<span class="name">filter</span> (<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name"><span class="builtin-name">&lt;=</span></span> x (<span class="name"><span class="builtin-name">car</span></span> L)))</span><br><span class="line">                                        (<span class="name"><span class="builtin-name">cdr</span></span> L))))</span><br><span class="line">              (<span class="name">big</span> (<span class="name">quicksort</span> (<span class="name">filter</span> (<span class="name"><span class="builtin-name">lambda</span></span> (x) (<span class="name"><span class="builtin-name">&gt;</span></span> x (<span class="name"><span class="builtin-name">car</span></span> L)))</span><br><span class="line">                                      (<span class="name"><span class="builtin-name">cdr</span></span> L)))))</span><br><span class="line">            (<span class="name"><span class="builtin-name">append</span></span> small (<span class="name"><span class="builtin-name">cons</span></span> (<span class="name"><span class="builtin-name">car</span></span> L) big)))))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://github.com/Perry961002/SICP/blob/master/little%20practice/quicksort.scm" target="_blank" rel="noopener">代码文件</a></li>
+</ul>
+<h3 id="2-归并排序"><a href="#2-归并排序" class="headerlink" title="2.归并排序"></a>2.归并排序</h3><h4 id="2-1-算法核心思想"><a href="#2-1-算法核心思想" class="headerlink" title="2.1.算法核心思想"></a>2.1.算法核心思想</h4><ul>
+<li><strong>合并两个列表L1、L2</strong><ul>
+<li>如果<code>L1</code>、<code>L2</code>中有一个为空，则返回另一个.</li>
+<li>否则分别取<code>L1</code>、<code>L2</code>的首元素<code>x1</code>、<code>x2</code><ul>
+<li>如果<code>x1</code>小于等于<code>x2</code>，则将<code>x1</code>作为新列表的首元素，并继续合并<code>L1</code>的剩余部分和<code>L2</code>.</li>
+<li>如果<code>x1</code>大于<code>x2</code>，则将<code>x2</code>作为新列表的首元素，并继续合并<code>L1</code>和<code>L2</code>的剩余部分.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">merge</span> L1 L2)</span><br><span class="line">    (<span class="name"><span class="builtin-name">cond</span></span> ((<span class="name"><span class="builtin-name">null?</span></span> L1) L2)</span><br><span class="line">          ((<span class="name"><span class="builtin-name">null?</span></span> L2) L1)</span><br><span class="line">          (<span class="name"><span class="builtin-name">else</span></span></span><br><span class="line">            (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">x1</span> (<span class="name"><span class="builtin-name">car</span></span> L1)) (<span class="name">x2</span> (<span class="name"><span class="builtin-name">car</span></span> L2)))</span><br><span class="line">                (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&lt;=</span></span> x1 x2)</span><br><span class="line">                    (<span class="name"><span class="builtin-name">cons</span></span> x1 (<span class="name">merge</span> (<span class="name"><span class="builtin-name">cdr</span></span> L1) L2))</span><br><span class="line">                    (<span class="name"><span class="builtin-name">cons</span></span> x2 (<span class="name">merge</span> L1 (<span class="name"><span class="builtin-name">cdr</span></span> L2))))))))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>归并排序</strong><ul>
+<li>每次选取列表的头两个元素进行合并然后舍弃，并将合并之后元素放置列表末尾，继续对新列表进行归并排序，直到列表中只有一个元素.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/imgs/sicp/mergesort.png" alt></p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">merge-sort</span> L)</span><br><span class="line">    (<span class="name"><span class="builtin-name">define</span></span> (<span class="name">transform</span> x)</span><br><span class="line">        (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">number?</span></span> x)</span><br><span class="line">            (<span class="name"><span class="builtin-name">list</span></span> x)</span><br><span class="line">            x))</span><br><span class="line">    (<span class="name"><span class="builtin-name">cond</span></span> ((<span class="name"><span class="builtin-name">null?</span></span> L) '())</span><br><span class="line">          ((<span class="name"><span class="builtin-name">=</span></span> (<span class="name"><span class="builtin-name">length</span></span> L) <span class="number">1</span>) (<span class="name"><span class="builtin-name">car</span></span> L))</span><br><span class="line">          (<span class="name"><span class="builtin-name">else</span></span></span><br><span class="line">            (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">l1</span> (<span class="name">transform</span> (<span class="name"><span class="builtin-name">car</span></span> L)))</span><br><span class="line">                  (<span class="name">l2</span> (<span class="name">transform</span> (<span class="name"><span class="builtin-name">cadr</span></span> L))))</span><br><span class="line">                (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">new</span> (<span class="name"><span class="builtin-name">list</span></span> (<span class="name">merge</span> l1 l2))))</span><br><span class="line">                    (<span class="name">merge-sort</span> (<span class="name"><span class="builtin-name">append</span></span> (<span class="name">cddr</span> L) new)))))))</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-完整代码实现"><a href="#2-2-完整代码实现" class="headerlink" title="2.2.完整代码实现"></a>2.2.完整代码实现</h4><ul>
+<li><a href="https://github.com/Perry961002/SICP/blob/master/little%20practice/merge-sort.scm" target="_blank" rel="noopener">代码文件</a></li>
+</ul>
+<h3 id="3-推排序"><a href="#3-推排序" class="headerlink" title="3.推排序"></a>3.推排序</h3><h4 id="3-1-算法核心思想"><a href="#3-1-算法核心思想" class="headerlink" title="3.1.算法核心思想"></a>3.1.算法核心思想</h4><ul>
+<li><p><strong>首先将数组映射为一棵完全二叉树</strong></p>
+<p>规则：对于 <code>i</code> 下标位置的元素，它的<code>左孩子</code>下标为 <code>2*i+1</code>，<code>右孩子</code>下标为 <code>2*(i+1)</code>​.</p>
+</li>
+</ul>
+<p><img src="/imgs/sicp/heapa.png" alt></p>
+<ul>
+<li><p><strong>维护一个以root下标为根，末尾下标为len的大根堆</strong></p>
+<p>如果root的两个孩子有比它大的，则将root和那个最大元素交换位置，并对那个子树进行<code>递归</code>维护.</p>
+</li>
+</ul>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">MaxHeapify</span> heap root len)</span><br><span class="line">    (<span class="name"><span class="builtin-name">define</span></span> (<span class="name">Left</span> i) (<span class="name"><span class="builtin-name">+</span></span> (<span class="name"><span class="builtin-name">*</span></span> i <span class="number">2</span>) <span class="number">1</span>))</span><br><span class="line">    (<span class="name"><span class="builtin-name">define</span></span> (<span class="name">Right</span> i) (<span class="name"><span class="builtin-name">*</span></span> (<span class="name"><span class="builtin-name">+</span></span> i <span class="number">1</span>) <span class="number">2</span>))</span><br><span class="line">    (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">left</span> (<span class="name">Left</span> root))</span><br><span class="line">          (<span class="name">right</span> (<span class="name">Right</span> root))</span><br><span class="line">          (<span class="name">largest</span> root))</span><br><span class="line">        (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">            (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">and</span></span> (<span class="name"><span class="builtin-name">&lt;=</span></span> left len)</span><br><span class="line">                     (<span class="name"><span class="builtin-name">&gt;</span></span> (<span class="name"><span class="builtin-name">vector-ref</span></span> heap left)</span><br><span class="line">                        (<span class="name"><span class="builtin-name">vector-ref</span></span> heap root)))</span><br><span class="line">                (<span class="name"><span class="builtin-name">set!</span></span> largest left))</span><br><span class="line">            (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">and</span></span> (<span class="name"><span class="builtin-name">&lt;=</span></span> right len)</span><br><span class="line">                     (<span class="name"><span class="builtin-name">&gt;</span></span> (<span class="name"><span class="builtin-name">vector-ref</span></span> heap right)</span><br><span class="line">                        (<span class="name"><span class="builtin-name">vector-ref</span></span> heap largest)))</span><br><span class="line">                (<span class="name"><span class="builtin-name">set!</span></span> largest right))</span><br><span class="line">            (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">not</span></span> (<span class="name"><span class="builtin-name">=</span></span> largest root))</span><br><span class="line">                (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name">head</span> (<span class="name"><span class="builtin-name">vector-ref</span></span> heap root)))</span><br><span class="line">                    (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">                        (<span class="name"><span class="builtin-name">vector-set!</span></span> heap root (<span class="name"><span class="builtin-name">vector-ref</span></span> heap largest))</span><br><span class="line">                        (<span class="name"><span class="builtin-name">vector-set!</span></span> heap largest head)</span><br><span class="line">                        (<span class="name">MaxHeapify</span> heap largest len)))))))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>初始化大根堆</strong></p>
+<p>从堆中的<code>最后一个有孩子</code>的节点开始<code>从右向左</code>、<code>从下向上</code>，以每个节点为根<code>维护一个大根堆</code>.</p>
+</li>
+</ul>
+<p><img src="/imgs/sicp/heapb.png" alt></p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">BuildMaxHeap</span> heap)</span><br><span class="line">    (<span class="name"><span class="builtin-name">define</span></span> (<span class="name">build-iter</span> i)</span><br><span class="line">        (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&gt;=</span></span> i <span class="number">0</span>)</span><br><span class="line">            (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">                (<span class="name">MaxHeapify</span> heap i (<span class="name"><span class="builtin-name">-</span></span> (<span class="name"><span class="builtin-name">vector-length</span></span> heap) <span class="number">1</span>))</span><br><span class="line">                (<span class="name">build-iter</span> (<span class="name"><span class="builtin-name">-</span></span> i <span class="number">1</span>)))))</span><br><span class="line">    (<span class="name">build-iter</span> (<span class="name"><span class="builtin-name">-</span></span> (<span class="name">div</span> (<span class="name"><span class="builtin-name">vector-length</span></span> heap) <span class="number">2</span>) <span class="number">1</span>)))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>堆排序</strong></p>
+<p>从初始的大根堆开始，每次将<code>0下标</code>位置和<code>len下标</code>位置的元素交换，并<code>len := len-1</code>，然后继续对0到<code>len</code>位置的元素进行堆排序，直到<code>len = 0</code>.</p>
+</li>
+</ul>
+<p><img src="/imgs/sicp/heapc.png" alt></p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">HeapSort</span> heap)</span><br><span class="line">    (<span class="name"><span class="builtin-name">define</span></span> (<span class="name">sort-iter</span> i)</span><br><span class="line">        (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&gt;=</span></span> i <span class="number">1</span>)</span><br><span class="line">            (<span class="name"><span class="builtin-name">let</span></span> ((<span class="name"><span class="builtin-name">max</span></span> (<span class="name"><span class="builtin-name">vector-ref</span></span> heap <span class="number">0</span>)))</span><br><span class="line">                (<span class="name"><span class="builtin-name">begin</span></span></span><br><span class="line">                    (<span class="name"><span class="builtin-name">vector-set!</span></span> heap <span class="number">0</span> (<span class="name"><span class="builtin-name">vector-ref</span></span> heap i))</span><br><span class="line">                    (<span class="name"><span class="builtin-name">vector-set!</span></span> heap i max)</span><br><span class="line">                    (<span class="name">MaxHeapify</span> heap <span class="number">0</span> (<span class="name"><span class="builtin-name">-</span></span> i <span class="number">1</span>))</span><br><span class="line">                    (<span class="name">sort-iter</span> (<span class="name"><span class="builtin-name">-</span></span> i <span class="number">1</span>))))))</span><br><span class="line">    (<span class="name">BuildMaxHeap</span> heap)</span><br><span class="line">    (<span class="name">sort-iter</span> (<span class="name"><span class="builtin-name">-</span></span> (<span class="name"><span class="builtin-name">vector-length</span></span> heap) <span class="number">1</span>))</span><br><span class="line">    heap)</span><br></pre></td></tr></table></figure>
+<h4 id="3-2-完整代码实现"><a href="#3-2-完整代码实现" class="headerlink" title="3.2.完整代码实现"></a>3.2.完整代码实现</h4><ul>
+<li><a href="https://github.com/Perry961002/SICP/blob/master/little%20practice/HeapSort.scm" target="_blank" rel="noopener">代码文件</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Scheme</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">函数式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SICP</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/25/scheme-sort/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/02/21/hexo-yilia/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用Github和Hexo搭建Yilia主题的博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、说明"><span class="toc-number">1.</span> <span class="toc-text">一、说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、具体算法实现"><span class="toc-number">2.</span> <span class="toc-text">二、具体算法实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-快速排序"><span class="toc-number">2.1.</span> <span class="toc-text">1.快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-算法核心思想"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1.算法核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-完整代码实现"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2.完整代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-归并排序"><span class="toc-number">2.2.</span> <span class="toc-text">2.归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-算法核心思想"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1.算法核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-完整代码实现"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.完整代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-推排序"><span class="toc-number">2.3.</span> <span class="toc-text">3.推排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-算法核心思想"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1.算法核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-完整代码实现"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2.完整代码实现</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "Mon Feb 25 2019 16:09:54 GMT+0800",
+  owner: 'Perry961002',
+  repo: 'perry961002.github.io',
+  oauth: {
+    client_id: 'e686acf8e7de5100fd74',
+    client_secret: 'ae35a66814791cf73d51bbe01f3948ea295b7129',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -265,9 +524,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
