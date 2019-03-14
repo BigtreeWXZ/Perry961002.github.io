@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/imgs/sicp/heapb.png">
 <meta property="og:image" content="http://yoursite.com/imgs/sicp/heapc.png">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/cn/88x31.png">
-<meta property="og:updated_time" content="2019-02-25T09:20:41.435Z">
+<meta property="og:updated_time" content="2019-03-14T18:05:46.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP的小练习--Scheme语言实现3个经典的排序算法">
 <meta name="twitter:description" content="一、说明 从去年11月份开始了《计算机程序的构造和解释》这本书的学习，开始接触了函数式。学习过程中也对编程有了新的理解，对递归这一程序设计技术也有了更深的掌握。其间为了自娱自乐用Scheme这一小众的函数式语言实现了3个经典排序算法，分别是快速排序、归并排序、堆排序。   目前我已经学习并完成了那本书的前三章的内容和习题，所有的代码也放在了GitHub仓库里，如果有对那本书感兴趣的朋友，可以一起讨">
@@ -246,9 +246,7 @@ function showBtn(){
 <ul>
 <li>目前我已经学习并完成了那本书的前三章的内容和习题，所有的代码也放在了<a href="https://github.com/Perry961002/SICP" target="_blank" rel="noopener">GitHub仓库</a>里，如果有对那本书感兴趣的朋友，可以一起讨论学习。</li>
 </ul>
-<hr>
 <a id="more"></a>
-<hr>
 <h2 id="二、具体算法实现"><a href="#二、具体算法实现" class="headerlink" title="二、具体算法实现"></a>二、具体算法实现</h2><h3 id="1-快速排序"><a href="#1-快速排序" class="headerlink" title="1.快速排序"></a>1.快速排序</h3><h4 id="1-1-算法核心思想"><a href="#1-1-算法核心思想" class="headerlink" title="1.1.算法核心思想"></a>1.1.算法核心思想</h4><ul>
 <li>每次选取第一个元素作为基准，并采用过滤器<code>filter</code>将剩余元素中小于等于基准的作为<code>small</code>部分、剩余元素中大于基准的作为<code>big</code>部分，然后对<code>small</code>和<code>big</code>部分进行快速排序，最后按<code>small-基准-big</code>的顺序组合成新的列表，直到列表中只有一个元素为止.</li>
 </ul>
