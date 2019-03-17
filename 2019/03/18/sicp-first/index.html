@@ -17,7 +17,7 @@
 <meta property="og:description" content="一、说明 读完了SICP的第四章，也完成了大部分的习题。是时候来写一点总结和分享一下自己的心得了，这篇博文主要的目的就是写一下对第1章《构造过程抽象》的总结，并且展示自己不成熟的解题代码，同各位爱好者进行交流，希望大家指出其中的不足！   第1章共有3小节内容，分别是：  1.1程序设计的基本元素  1.2过程与它们所产生的计算  1.3用高阶函数做函数">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/cn/88x31.png">
-<meta property="og:updated_time" content="2019-03-17T16:50:35.410Z">
+<meta property="og:updated_time" content="2019-03-17T17:00:02.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP读书笔记--第1章《构造过程抽象》">
 <meta name="twitter:description" content="一、说明 读完了SICP的第四章，也完成了大部分的习题。是时候来写一点总结和分享一下自己的心得了，这篇博文主要的目的就是写一下对第1章《构造过程抽象》的总结，并且展示自己不成熟的解题代码，同各位爱好者进行交流，希望大家指出其中的不足！   第1章共有3小节内容，分别是：  1.1程序设计的基本元素  1.2过程与它们所产生的计算  1.3用高阶函数做函数">
@@ -355,7 +355,7 @@ function showBtn(){
 <li><p><strong>过程作为参数</strong></p>
 <p>如上面所说的我们可以把一个公共模式提取出来，只考虑它的一般情况，而不是考虑一些具体的表达，建立一般的抽象。在这里我们的参数可能不再只是简单的变量，而可能是一些一般化的过程。</p>
 <ul>
-<li><p>回一下求和公式：<br>$$<br>\sum_{n=a}^bf(n)=f(a)+ \cdots +f(b)<br>$$<br>看看这个公式的代码吧</p>
+<li><p>回忆一下求和公式：<br>$$<br>\sum_{n=a}^bf(n)=f(a)+ \cdots +f(b)<br>$$<br>看看这个公式的代码吧</p>
 <figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name">sum</span> f a next b)</span><br><span class="line">  (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&gt;</span></span> a b)</span><br><span class="line">      <span class="number">0</span></span><br><span class="line">      (<span class="name"><span class="builtin-name">+</span></span> (<span class="name">f</span> a)</span><br><span class="line">         (<span class="name">sum</span> f (<span class="name">next</span> a) next b))))</span><br></pre></td></tr></table></figure>
 <p>这里的<code>f</code>就是公式里的$f$，只是一个一般化的形式描述，没有具体的定义，<code>next</code>描述的是变量怎么从一个状态到另一个状态，也没有具体的定义。</p>
 </li>
@@ -780,19 +780,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">书单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BookList</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">书单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BookList</a>
               </li>
              
               <li class="article-tag-list-item">
