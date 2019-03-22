@@ -176,6 +176,107 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sicp-third" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/23/sicp-third/">SICP读书笔记--第3章《模块化、对象和状态》</a>
+    </h1>
+  
+
+          <!-- 显示阅读和评论数 -->
+
+        
+        <a href="/2019/03/23/sicp-third/" class="archive-article-date">
+  	<time datetime="2019-03-22T22:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
+</a>
+        
+      </header>
+    
+    
+    <!-- 目录内容 -->
+		
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h2><blockquote>
+<ul>
+<li><p>在第1章中我们知道了如何进行<strong>过程抽象</strong>，如何利用<strong>高阶过程</strong>达到更高一级的抽象。</p>
+</li>
+<li><p>在第2章中我们学会了<strong>数据抽象</strong>，知道了它的一般方法，利用它对系统各层次之间建立<strong>抽象屏障</strong>，利用<strong>闭包性质</strong>设计<strong>层次性结构</strong>数据，并学会了序列操作的一般性约定方法，深刻领会了<strong>数据导向</strong>的程序设计方法，并学会利用了<strong>消息传递</strong>进行程序分派。</p>
+</li>
+</ul>
+<p>这两章的内容都可以利用<strong>代换模型</strong>进行解释，可是在自然界中的对象都不可避免地要考虑由时间带来的<strong>状态</strong>问题，本章就是通过引入对象、状态和赋值概念后完成对现实世界的模拟。</p>
+</blockquote>
+<ul>
+<li>本章内容分布：<ul>
+<li>3.1赋值和局部状态</li>
+<li>3.2求值的环境模型</li>
+<li>3.3用变动数据做模拟</li>
+<li>3.4并发：时间是一个本质问题</li>
+<li>3.5流</li>
+</ul>
+</li>
+<li><a href="#jump">我的解题代码</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/03/23/sicp-third/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SICP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/23/sicp-third/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo-plugin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -644,105 +745,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-scheme-sort" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/scheme-sort/">SICP的小练习--Scheme语言实现3个经典的排序算法</a>
-    </h1>
-  
-
-          <!-- 显示阅读和评论数 -->
-
-        
-        <a href="/2019/02/25/scheme-sort/" class="archive-article-date">
-  	<time datetime="2019-02-25T08:09:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        
-      </header>
-    
-    
-    <!-- 目录内容 -->
-		
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h2><blockquote>
-<p>从去年11月份开始了《计算机程序的构造和解释》这本书的学习，开始接触了函数式。学习过程中也对编程有了新的理解，对递归这一程序设计技术也有了更深的掌握。其间为了自娱自乐用Scheme这一小众的函数式语言实现了3个经典排序算法，分别是快速排序、归并排序、堆排序。</p>
-</blockquote>
-<ul>
-<li>目前我已经学习并完成了那本书的前三章的内容和习题，所有的代码也放在了<a href="https://github.com/Perry961002/SICP" target="_blank" rel="noopener">GitHub仓库</a>里，如果有对那本书感兴趣的朋友，可以一起讨论学习。</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/02/25/scheme-sort/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Scheme</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">函数式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SICP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/25/scheme-sort/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -870,19 +872,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">书单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BookList</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">书单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BookList</a>
               </li>
              
               <li class="article-tag-list-item">
