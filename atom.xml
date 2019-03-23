@@ -257,11 +257,11 @@
     </summary>
     
     
-      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
-    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
       <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
     
       <category term="Yilia" scheme="http://yoursite.com/tags/Yilia/"/>
     
