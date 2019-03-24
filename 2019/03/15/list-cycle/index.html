@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/imgs/algorithm/list.JPG">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/cn/88x31.png">
-<meta property="og:updated_time" content="2019-03-14T18:03:54.770Z">
+<meta property="og:updated_time" content="2019-03-24T12:07:42.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="环形链表问题的证明">
 <meta name="twitter:description" content="一、说明在LeetCode上有这样两道关于环形链表的题目：  No.141 描述：给定一个链表，判断链表中是否有环。题目链接  No.142 描述：给定一个链表，返回链表开始入环的第一个节点。题目链接   这篇文章主要做一下解题方法—-快慢指针法的正确性证明。">
@@ -248,9 +248,9 @@ function showBtn(){
 <h2 id="二、证明"><a href="#二、证明" class="headerlink" title="二、证明"></a>二、证明</h2><h3 id="1-证明快慢指针在环中是可以恰好相遇的"><a href="#1-证明快慢指针在环中是可以恰好相遇的" class="headerlink" title="1.证明快慢指针在环中是可以恰好相遇的"></a>1.证明快慢指针在环中是可以恰好相遇的</h3><p><img src="/imgs/algorithm/list.JPG" alt></p>
 <p>设链表的头结点为$x_0$，环的起始结点为$x_s$，环的结点个数为$l$。当我们从$x_0$开始遍历链表的话可以得到下面的一个无穷序列：</p>
 <script type="math/tex; mode=display">
-x_0, x_1,\cdots,x_s,x_{s+1},\cdots,x_{s+l-1},x_s,\cdots</script><p>假设$j$是$l$的整数倍且是满足$j&gt;s$的<strong>最小</strong>的那一个，对于任意的正整数$k(k\geq2)$，考虑两个结点位置$x<em>j$和$x</em>{kj} $（即慢指针走到了$x<em>j$，快指针走到了$x</em>{kj}$），容易知道的事实是：$x<em>j$肯定在环中。那么$x</em>{kj}$也在环中，因为$kj=j+(k-1)j$，可以认为$x<em>{kj}$是从$x_j$开始多走了$k-1$个$j$步，所以$x_j=x</em>{kj}​$。</p>
+x_0, x_1,\cdots,x_s,x_{s+1},\cdots,x_{s+l-1},x_s,\cdots</script><p>假设$j$是$l$的整数倍且是满足$j&gt;s$的<strong>最小</strong>的那一个，对于任意的正整数$k(k\geq2)$，考虑两个结点位置 <script type="math/tex">x_j</script> 和 <script type="math/tex">x_{k*j}</script> （即慢指针走到了<script type="math/tex">x_j</script>，快指针走到了<script type="math/tex">x_{k*j}</script>），容易知道的事实是：<script type="math/tex">x_j</script>肯定在环中。那么<script type="math/tex">x_{k*j}</script>也在环中，因为<script type="math/tex">k*j=j+(k-1)*j</script>，可以认为<script type="math/tex">x_{k*j}</script>是从<script type="math/tex">x_j</script>开始多走了$k-1$个$j$步，所以<script type="math/tex">x_j=x_{k*j}</script>。</p>
 <p>综上，<strong>两个指针一定会恰好相遇</strong>！</p>
-<p>那么为了以<strong>最快的速度</strong>让两个指针相遇，我们应该让$k$尽可能小，所以$k$取2。所以让<strong>慢指针走1步</strong>，而<strong>快指针走2步</strong>！</p>
+<p>那么为了以<strong>最快的速度</strong>让两个指针相遇，我们应该让$k​$尽可能小，所以$k​$取2。所以让<strong>慢指针走1步</strong>，而<strong>快指针走2步</strong>！</p>
 <h3 id="2-解题代码"><a href="#2-解题代码" class="headerlink" title="2.解题代码"></a>2.解题代码</h3><ul>
 <li>其他题目的代码(C++, Java, Python)，包括一些经典数据结构和算法的实现也放在了我的<a href="https://github.com/Perry961002/Algorithms-LeetCode" target="_blank" rel="noopener">GitHub</a>上。</li>
 </ul>
@@ -570,11 +570,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">书单</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BookList</a>
+                <a href="javascript:void(0)" class="js-tag color2">live2d</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,11 +586,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">书单</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">live2d</a>
+                <a href="javascript:void(0)" class="js-tag color4">BookList</a>
               </li>
              
               <li class="article-tag-list-item">
