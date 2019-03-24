@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-22T19:28:34.976Z</updated>
+  <updated>2019-03-24T07:08:39.196Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo安装live2d插件</title>
+    <link href="http://yoursite.com/2019/03/24/hexo-live2d/"/>
+    <id>http://yoursite.com/2019/03/24/hexo-live2d/</id>
+    <published>2019-03-24T06:34:30.000Z</published>
+    <updated>2019-03-24T07:08:39.196Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/imgs/hexo/live.JPG" alt></p><blockquote><p>今天看见别人的博客页面上有一只动态、萌萌的小猫模型，在多方波折之后终于在自己的博客上也弄了一只，现在分享一下步骤！</p></blockquote><a id="more"></a><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul><li><p>动态模型通过一个<code>Hexo</code>插件<code>live2d</code>来实现的，作者制作了10多个精美的模型，具体的展示可以看<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">作者的博客</a>。</p></li><li><p><a href="https://github.com/EYHN/hexo-helper-live2d/" target="_blank" rel="noopener">Github项目地址</a></p></li><li><p>我的博客上使用的是<code>hijiki</code>模型</p></li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="1-安装模块"><a href="#1-安装模块" class="headerlink" title="1.安装模块"></a>1.安装模块</h3><ul><li><p>首先我们需要安装<code>live2d</code>模块，我们需要在blog根目录下运行下面的命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure></li></ul><h3 id="2-安装模型"><a href="#2-安装模型" class="headerlink" title="2.安装模型"></a>2.安装模型</h3><ul><li><p>作者为我们提供了下面的多种模型，大家可以根据自己的喜好来选择，<a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">具体效果展示</a>。</p><blockquote><ul><li>live2d-widget-model-chitose</li><li>live2d-widget-model-epsilon2_1</li><li>live2d-widget-model-gf</li><li>live2d-widget-model-haru/01 (use npm install —save live2d-widget-model-haru)</li><li>live2d-widget-model-haru/02 (use npm install —save live2d-widget-model-haru)</li><li>live2d-widget-model-haruto</li><li>live2d-widget-model-hibiki</li><li>live2d-widget-model-hijiki</li><li>live2d-widget-model-izumi</li><li>live2d-widget-model-koharu</li><li>live2d-widget-model-miku</li><li>live2d-widget-model-ni-j</li><li>live2d-widget-model-nico</li><li>live2d-widget-model-nietzsche</li><li>live2d-widget-model-nipsilon</li><li>live2d-widget-model-nito</li><li>live2d-widget-model-shizuku</li><li>live2d-widget-model-tororo</li><li>live2d-widget-model-tsumiki</li><li>live2d-widget-model-unitychan</li><li>live2d-widget-model-wanko</li><li>live2d-widget-model-z16</li></ul></blockquote></li><li><p>我们可以使用运行<code>npm install 模型名</code>的方式来安装对应的模型，我这里运行的是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-hijiki</span><br></pre></td></tr></table></figure></li></ul><h3 id="3-配置-config-yml"><a href="#3-配置-config-yml" class="headerlink" title="3.配置_config.yml"></a>3.配置_config.yml</h3><ul><li><p>打开blog根目录下的<code>config.yml</code>文件，在最后追加下面的代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span></span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span></span><br><span class="line">  debug: <span class="literal">false</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-hijiki  <span class="comment">#换成自己安装的模型</span></span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span></span><br></pre></td></tr></table></figure></li></ul><hr><blockquote><p><a rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/cn/88x31.png"></a><br>本<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">文章</span>由<a xmlns:cc="https://creativecommons.org/ns#" href="https://perry96.com" property="cc:attributionName" rel="noopener" target="_blank">Perry</a>创作，采用<a rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank">知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议</a>进行许可。凡是转载的文章，翻译的文章，或者由其他作者投稿的文章，版权归原作者所有。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/imgs/hexo/live.JPG&quot; alt&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;今天看见别人的博客页面上有一只动态、萌萌的小猫模型，在多方波折之后终于在自己的博客上也弄了一只，现在分享一下步骤！&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="live2d" scheme="http://yoursite.com/tags/live2d/"/>
+    
+  </entry>
   
   <entry>
     <title>SICP读书笔记--第3章《模块化、对象和状态》</title>
@@ -257,11 +282,11 @@
     </summary>
     
     
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
       <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
     
       <category term="Yilia" scheme="http://yoursite.com/tags/Yilia/"/>
     
